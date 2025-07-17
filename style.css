@@ -506,3 +506,63 @@ html, body {
   height: 100vh;
   overflow-y: auto;
 }
+
+/* Modale d'ajout utilisateur */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(44, 62, 80, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px 24px 28px;
+  box-shadow: 0 4px 32px rgba(44,62,80,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  text-align: left;
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.7rem;
+  color: #b0b8c9;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: #ff4d6d;
+}
+#addUserForm label {
+  font-weight: 500;
+  color: #232e3c;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+}
+#addUserForm input, #addUserForm select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8f9fb;
+  color: #232e3c;
+}
+#addUserForm button[type="submit"] {
+  width: 100%;
+  margin-top: 12px;
+}

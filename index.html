@@ -146,9 +146,37 @@
       </div>
     </main>
   </div>
+
+<!-- Modale d'ajout utilisateur -->
+<div id="addUserModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Ajouter un utilisateur</h3>
+    <form id="addUserForm">
+      <label>Nom<br><input type="text" name="name" required></label><br>
+      <label>Email<br><input type="email" name="email" required></label><br>
+      <label>Genre<br>
+        <select name="gender" required>
+          <option value="male">Homme</option>
+          <option value="female">Femme</option>
+        </select>
+      </label><br>
+      <label>Status<br>
+        <select name="status" required>
+          <option value="active">Actif</option>
+          <option value="inactive">Inactif</option>
+        </select>
+      </label><br>
+      <button type="submit" class="users-add-btn" style="margin-top:12px;">Ajouter</button>
+    </form>
+    <div id="addUserError" style="color:#ff4d6d; margin-top:8px;"></div>
+  </div>
+</div>
 </body>
 </html>
-<!-- jQuery et script pagination utilisateurs -->
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 const USERS_PER_PAGE = 10;
@@ -175,7 +203,7 @@ function loadUsers(page = 1) {
 }
 
 $(document).ready(function() {
-  // Génère la pagination
+  
   let pagBtns = '';
   for(let i=1; i<=TOTAL_PAGES; i++) {
     pagBtns += `<button class="page-btn" data-page="${i}">${i}</button>`;
@@ -186,7 +214,7 @@ $(document).ready(function() {
     <button id="next-btn">Suivant</button>
   `);
 
-  // Gestion des clics pagination
+  
   let currentPage = 1;
   loadUsers(currentPage);
 
@@ -205,6 +233,58 @@ $(document).ready(function() {
       currentPage++;
       loadUsers(currentPage);
     }
+  });
+});
+
+// Gestion modale ajout utilisateur
+$(function() {
+  
+  $('.users-add-btn').click(function(e) {
+    if($(this).closest('#addUserForm').length === 0) {
+      $('#addUserModal').fadeIn(150);
+      $('#addUserForm')[0].reset();
+      $('#addUserError').text('');
+    }
+  });
+  
+  $('.close-modal').click(function() {
+    $('#addUserModal').fadeOut(150);
+  });
+  $(window).on('click', function(e) {
+    if($(e.target).is('#addUserModal')) $('#addUserModal').fadeOut(150);
+  });
+  
+  // Soumission du formulaire
+  $('#addUserForm').submit(function(e) {
+    e.preventDefault();
+    var data = {
+      name: this.name.value,
+      email: this.email.value,
+      gender: this.gender.value,
+      status: this.status.value
+    };
+
+    var token = '95b2b50b94fe3b46ae16f7b8c757399bcb18cf68dde0bb6ae4f3371489b51362'; 
+    $.ajax({
+      url: 'https://gorest.co.in/public/v2/users',
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + token },
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      success: function(user) {
+        // Ajoute l'utilisateur en haut du tableau
+        var row = `<tr><td>${user.name}</td><td>${user.email}</td><td>${user.gender}</td><td>${user.status}</td></tr>`;
+        $('#users-table tbody').prepend(row);
+        $('#addUserModal').fadeOut(150);
+      },
+      error: function(xhr) {
+        var msg = 'Erreur lors de l\'ajout.';
+        if(xhr.responseJSON && xhr.responseJSON[0] && xhr.responseJSON[0].message) {
+          msg = xhr.responseJSON[0].message;
+        }
+        $('#addUserError').text(msg);
+      }
+    });
   });
 });
 </script>
