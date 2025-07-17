@@ -127,154 +127,20 @@
           </div>
 
           <div class="users-table-wrapper">
-            <table class="users-table">
+            <table id="users-table" class="users-table">
               <thead>
                 <tr>
-                  <th><input type="checkbox" /></th>
-                  <th>User</th>
-                  <th>Role</th>
-                  <th>Last login</th>
-                  <th>Two-step</th>
-                  <th>Joined date</th>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>Genre</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- utilisateurs -->
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Karina Clark" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Karina Clark</div>
-                        <div class="user-email">karina@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role superadmin">Super admin</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge approved">Approved</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">John Doe</div>
-                        <div class="user-email">john@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Manager</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge declined">Declined</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie Lee" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Sophie Lee</div>
-                        <div class="user-email">sophie@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Agent</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge inprogress">In Progress</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Paul Martin" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Paul Martin</div>
-                        <div class="user-email">paul@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Manager</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge intransit">In Transit</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Lucas Bernard" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Lucas Bernard</div>
-                        <div class="user-email">lucas@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Analyste</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge declined">Declined</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Emma Dubois" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Emma Dubois</div>
-                        <div class="user-email">emma@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Manager</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge inprogress">In Progress</span></td>
-                  <td>05 May 2021</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" /></td>
-                  <td>
-                    <div class="user-info">
-                      <div class="user-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Antoine Petit" />
-                        <span class="user-status online"></span>
-                      </div>
-                      <div class="user-details">
-                        <div class="user-name">Antoine Petit</div>
-                        <div class="user-email">antoine@kpmg.com.au</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="user-role">Agent</span></td>
-                  <td><span class="user-login">Time ago</span></td>
-                  <td><span class="user-badge intransit">In Transit</span></td>
-                  <td>05 May 2021</td>
-                </tr>
+                <!-- Les utilisateurs seront injectés ici -->
               </tbody>
             </table>
+            <div class="pagination" style="margin-top: 16px; text-align: center;"></div>
           </div>
         </section>
       </div>
@@ -282,3 +148,63 @@
   </div>
 </body>
 </html>
+<!-- jQuery et script pagination utilisateurs -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+const USERS_PER_PAGE = 10;
+const TOTAL_USERS = 500;
+const TOTAL_PAGES = Math.ceil(TOTAL_USERS / USERS_PER_PAGE);
+
+function loadUsers(page = 1) {
+  $.get(`https://gorest.co.in/public/v2/users?page=${page}&per_page=${USERS_PER_PAGE}`, function(users) {
+    let rows = '';
+    users.forEach(user => {
+      rows += `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.gender}</td>
+          <td>${user.status}</td>
+        </tr>
+      `;
+    });
+    $('#users-table tbody').html(rows);
+    $('.pagination .page-btn').removeClass('active');
+    $(`.pagination .page-btn[data-page=${page}]`).addClass('active');
+  });
+}
+
+$(document).ready(function() {
+  // Génère la pagination
+  let pagBtns = '';
+  for(let i=1; i<=TOTAL_PAGES; i++) {
+    pagBtns += `<button class="page-btn" data-page="${i}">${i}</button>`;
+  }
+  $('.pagination').html(`
+    <button id="prev-btn">Précédent</button>
+    ${pagBtns}
+    <button id="next-btn">Suivant</button>
+  `);
+
+  // Gestion des clics pagination
+  let currentPage = 1;
+  loadUsers(currentPage);
+
+  $('.pagination').on('click', '.page-btn', function() {
+    currentPage = parseInt($(this).data('page'));
+    loadUsers(currentPage);
+  });
+  $('#prev-btn').click(function() {
+    if(currentPage > 1) {
+      currentPage--;
+      loadUsers(currentPage);
+    }
+  });
+  $('#next-btn').click(function() {
+    if(currentPage < TOTAL_PAGES) {
+      currentPage++;
+      loadUsers(currentPage);
+    }
+  });
+});
+</script>

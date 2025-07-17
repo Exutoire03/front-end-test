@@ -3,7 +3,6 @@
   display: flex;
   min-height: 100vh;
   background: #f8f9fb;
-  height: 100vh;
 }
 
 /* Sidebar */
@@ -17,7 +16,6 @@
   align-items: center;
   padding: 24px 0 4px 0;
   box-shadow: 1px 0 0 #e5e7eb;
-  height: 100vh;
 }
 .sidebar-top {
   display: flex;
@@ -115,8 +113,6 @@
 .main-content {
   flex: 1;
   background: #fff;
-  min-height: 100vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -124,12 +120,10 @@
 .main-inner {
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 250px;
   min-width: 250px;
   margin: 0 0 0 0;
   padding: 40px 0 24px 16px;
-  min-height: 0;
   position: relative;
   background: #fff;
   border-radius: 0 18px 0 0;
@@ -246,8 +240,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: none;
-  height: 100%;
-  overflow: hidden;
+  /* overflow: visible; */
 }
 .users-header {
   display: flex;
@@ -328,8 +321,7 @@
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  overflow: hidden;
-  flex: 1;
+  /* overflow: visible; */
   display: flex;
   flex-direction: column;
 }
@@ -474,17 +466,15 @@
   align-items: stretch;
   width: 100%;
   gap: 0;
-  height: 100%;
+  /* plus de height ici */
 }
 .main-inner {
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 250px;
   min-width: 250px;
   margin: 0 0 0 0;
   padding: 40px 0 24px 16px;
-  min-height: 0;
   position: relative;
   background: #fff;
   border-radius: 0 18px 0 0;
@@ -509,11 +499,10 @@
   display: flex;
   flex-direction: column;
   box-shadow: none;
-  height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html, body {
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
 }
