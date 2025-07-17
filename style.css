@@ -241,6 +241,7 @@
   flex-direction: column;
   box-shadow: none;
   /* overflow: visible; */
+  overflow-x: hidden;
 }
 .users-header {
   display: flex;
@@ -317,53 +318,76 @@
   margin-right: 8px;
 }
 
+/* utilisateurs */
 .users-table-wrapper {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  /* overflow: visible; */
-  display: flex;
-  flex-direction: column;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 .users-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 0 16px;
   font-size: 1rem;
+  background: transparent;
+  table-layout: fixed;
+}
+.users-table th:first-child, .users-table td:first-child {
+  width: 48%;
+  min-width: 220px;
+}
+.users-table th:nth-child(2), .users-table td:nth-child(2) {
+  width: 18%;
+  text-align: center;
+}
+.users-table th:nth-child(3), .users-table td:nth-child(3) {
+  width: 34%;
+  text-align: center;
 }
 .users-table thead tr {
+  background: transparent;
+}
+.users-table th {
+  text-transform: uppercase;
   color: #b0b8c9;
   font-size: 0.98rem;
   font-weight: 700;
-  background: transparent;
-}
-.users-table th, .users-table td {
-  padding: 14px 12px;
-  text-align: left;
+  background: #f8f9fb;
   border: none;
-}
-.users-table th:first-child, .users-table td:first-child {
-  width: 36px;
+  padding: 14px 12px 14px 12px;
+  letter-spacing: 0.04em;
 }
 .users-table tbody tr {
-  border-top: 1px dashed #e5e7eb;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
   transition: background 0.15s;
+  overflow: hidden;
 }
 .users-table tbody tr:hover {
-  background: #f4f6fa;
+  background: #f2f6ff;
 }
+.users-table td {
+  padding: 14px 12px;
+  border: none;
+  vertical-align: middle;
+}
+/* Avatar, nom, email */
 .user-info {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
 }
 .user-avatar {
-  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  background: #ffe082;
+  background: #eaf1ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,68 +397,69 @@
   height: 100%;
   object-fit: cover;
 }
-.user-status {
-  position: absolute;
-  bottom: 6px;
-  right: 4px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-.user-status.online {
-  background: #2ee59d;
-}
 .user-details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
 }
 .user-name {
   font-weight: 700;
   color: #232e3c;
   font-size: 1.08rem;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .user-email {
   color: #b0b8c9;
   font-size: 0.97rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.user-role {
-  font-weight: 700;
-  color: #2563eb;
-}
-.user-role.superadmin {
-  color: #232e3c;
-}
-.user-login {
-  color: #8b95b6;
-  font-weight: 700;
-  background: #f4f6fa;
-  border-radius: 6px;
-  padding: 4px 14px;
-  font-size: 0.98rem;
-}
-.user-badge {
+/* Badge statut */
+.user-status-badge {
   display: inline-block;
   font-size: 0.98rem;
   font-weight: 600;
   border-radius: 6px;
   padding: 4px 14px;
-}
-.user-badge.approved {
-  background: #e6fbf3;
-  color: #2ee59d;
-}
-.user-badge.declined {
-  background: #ffe6ea;
-  color: #ff4d6d;
-}
-.user-badge.inprogress {
   background: #eaf1ff;
   color: #2563eb;
 }
-.user-badge.intransit {
-  background: #fff8e1;
-  color: #ffd600;
+.user-status-badge.active {
+  background: #e6fbf3;
+  color: #2ee59d;
+}
+.user-status-badge.inactive {
+  background: #ffe6ea;
+  color: #ff4d6d;
+}
+/* Pagination stylée */
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.pagination button {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #2563eb;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pagination button.active, .pagination button:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
 }
 
 @media (max-width: 1200px) {
@@ -466,7 +491,6 @@
   align-items: stretch;
   width: 100%;
   gap: 0;
-  /* plus de height ici */
 }
 .main-inner {
   display: flex;
@@ -499,12 +523,12 @@
   display: flex;
   flex-direction: column;
   box-shadow: none;
-  /* overflow: hidden; */
 }
 
 html, body {
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Modale d'ajout utilisateur */
