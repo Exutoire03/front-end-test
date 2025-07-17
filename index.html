@@ -214,9 +214,22 @@ $(document).ready(function() {
     <button id="next-btn">Suivant</button>
   `);
 
-  
   let currentPage = 1;
   loadUsers(currentPage);
+
+  // Recherche dynamique sur la page courante
+  $(document).on('input', '.search-box input', function() {
+    const search = $(this).val().toLowerCase();
+    $('#users-table tbody tr').each(function() {
+      const name = $(this).find('td').eq(0).text().toLowerCase();
+      const email = $(this).find('td').eq(1).text().toLowerCase();
+      if(name.includes(search) || email.includes(search)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 
   $('.pagination').on('click', '.page-btn', function() {
     currentPage = parseInt($(this).data('page'));
@@ -272,7 +285,6 @@ $(function() {
       contentType: 'application/json',
       data: JSON.stringify(data),
       success: function(user) {
-        // Ajoute l'utilisateur en haut du tableau
         var row = `<tr><td>${user.name}</td><td>${user.email}</td><td>${user.gender}</td><td>${user.status}</td></tr>`;
         $('#users-table tbody').prepend(row);
         $('#addUserModal').fadeOut(150);
