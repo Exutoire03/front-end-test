@@ -1,12 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Test Front-end</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Sidebar</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-logo-box">
+          <!-- Heroicon: Squares2x2 (logo) -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-logo-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v3.75A2.25 2.25 0 009 9h3.75M17.25 3v3.75A2.25 2.25 0 0115 9h-3.75M6.75 21v-3.75A2.25 2.25 0 019 15h3.75M17.25 21v-3.75A2.25 2.25 0 0115 15h-3.75" />
+          </svg>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#"><!-- Heroicon: Users -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 16.5a7.488 7.488 0 00-5.982 2.225M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm6 2.25a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-2.25 6.75a6.72 6.72 0 012.25-5.25m-13.5 5.25a6.72 6.72 0 00-2.25-5.25" />
+              </svg></a></li>
+            <li><a href="#"><!-- Heroicon: Chart Bar -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V9m4 8V5m4 8v-3" />
+              </svg></a></li>
+            <li><a href="#"><!-- Heroicon: Shield Check -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8.485 3.03A2.25 2.25 0 0121 8.13v5.25c0 5.25-6.75 7.875-9 8.625-2.25-.75-9-3.375-9-8.625V8.13a2.25 2.25 0 01.515-2.1L12 3z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+              </svg></a></li>
+            <li><a href="#"><!-- Heroicon: Book Open -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4.5a2.25 2.25 0 00-2.25-2.25h-3A2.25 2.25 0 004.5 4.5V19.5A2.25 2.25 0 006.75 21.75h3A2.25 2.25 0 0012 19.5V18m0-12v1.5m0 0v1.5m0-1.5h6.75A2.25 2.25 0 0121 6.75v12A2.25 2.25 0 0118.75 21h-3A2.25 2.25 0 0113.5 18.75V6.75A2.25 2.25 0 0115.75 4.5h3A2.25 2.25 0 0121 6.75v12A2.25 2.25 0 0118.75 21h-3A2.25 2.25 0 0113.5 18.75V6.75z" />
+              </svg></a></li>
+            <li><a href="#"><!-- Heroicon: Document Plus -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-notif">
+          <!-- Heroicon: Bell + badge -->
+          <div class="notif-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sidebar-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.657A2.25 2.25 0 0112 19.5a2.25 2.25 0 01-2.857-1.843M6 8.25V6a6 6 0 1112 0v2.25a6.003 6.003 0 01-1.5 3.975v2.025a2.25 2.25 0 01-2.25 2.25h-3a2.25 2.25 0 01-2.25-2.25V12.225A6.003 6.003 0 016 8.25z" />
+            </svg>
+            <span class="notif-dot"></span>
+          </div>
+        </div>
+        <div class="sidebar-avatar">
+          <!-- Avatar rond (image ou initiales) -->
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar" />
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="main-inner">
+        <h2 class="main-title">Comptes</h2>
+        <nav class="main-menu">
+          <ul>
+            <li class="active">
+              <a href="#">
+                Dashboard
+                <span class="chevron">&gt;</span>
+              </a>
+            </li>
+            <li><a href="#">Sections <span class="chevron">&gt;</span></a></li>
+            <li><a href="#">Catégories <span class="chevron">&gt;</span></a></li>
+            <li><a href="#">Labels <span class="chevron">&gt;</span></a></li>
+            <li><a href="#">Rôles <span class="chevron">&gt;</span></a></li>
+          </ul>
+        </nav>
+        <div class="main-bottom">
+          <button class="main-btn">Ajouter un utilisateur</button>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
